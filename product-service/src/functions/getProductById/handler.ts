@@ -5,7 +5,7 @@ export const getProductById = async (event) => {
   const { id } = event.pathParameters;
   try {
     const product = await getProduct(id);
-    return formatJSONResponse(product);
+    return formatJSONResponse({ product });
   } catch ({ message }) {
     return formatJSONResponse({ message }, 404)
   }
